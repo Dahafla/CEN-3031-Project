@@ -1,1 +1,2 @@
-# CEN-3031-Project
+# DAGZ
+# Interactive web application that makes your restaurant even faster!

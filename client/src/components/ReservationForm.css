@@ -1,0 +1,54 @@
+body {
+    background-color: white;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+l {
+    color: black;
+    text-align: center;
+}
+
+#fname {
+    color: black;
+    text-align: left;
+}
+
+#lname {
+    color: black;
+    text-align: right;
+}
+
+#dob {
+    color: black;
+    text-align: left;
+}
+
+#phonenumber {
+    color: black;
+    text-align: left;
+}
+
+#resdate {
+    color: black;
+    text-align: left;
+}
+
+#restime {
+    color: black;
+    text-align: right;
+}
+
+#partysize {
+    color: black;
+    text-align: left;
+}
+
+#table {
+    color: black;
+    text-align: right;
+}

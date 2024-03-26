@@ -2,53 +2,32 @@ body {
     background-color: white;
 }
 
-p {
-    color: white;
+h1 {
+    color: black;
     text-align: center;
     font-size: 30px;
 }
 
-l {
+section {
+    display: flex;
+}
+
+h2 {
     color: black;
     text-align: center;
 }
 
-#fname {
+label {
     color: black;
-    text-align: left;
+    vertical-align: middle;
 }
 
-#lname {
+input {
     color: black;
-    text-align: right;
+    background-color: white;
 }
 
-#dob {
+#Submit {
     color: black;
-    text-align: left;
 }
 
-#phonenumber {
-    color: black;
-    text-align: left;
-}
-
-#resdate {
-    color: black;
-    text-align: left;
-}
-
-#restime {
-    color: black;
-    text-align: right;
-}
-
-#partysize {
-    color: black;
-    text-align: left;
-}
-
-#table {
-    color: black;
-    text-align: right;
-}

@@ -2,6 +2,12 @@ body {
     background-color: white;
 }
 
+p {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;
+}
+
 h1 {
     color: black;
     text-align: center;
@@ -10,6 +16,11 @@ h1 {
 
 section {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 33vh;
+    width: 100vw;
 }
 
 h2 {
@@ -17,6 +28,46 @@ h2 {
     text-align: center;
 }
 
+#fname {
+    color: black;
+    text-align: left;
+}
+
+#lname {
+    color: black;
+    text-align: right;
+}
+
+#dob {
+    color: black;
+    text-align: left;
+}
+
+#phonenumber {
+    color: black;
+    text-align: left;
+}
+
+#resdate {
+    color: black;
+    text-align: left;
+}
+
+#restime {
+    color: black;
+    text-align: right;
+}
+
+#partysize {
+    color: black;
+    text-align: left;
+}
+
+#table {
+    color: black;
+    text-align: right;
+}
+  
 label {
     color: black;
     vertical-align: middle;

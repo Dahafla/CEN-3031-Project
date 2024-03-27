@@ -29,8 +29,7 @@ function ReservationForm() {
 
             <section>
                 <h2>Reservation</h2>
-                <section>
-                    <h2>Reservation</h2>
+
                     <label htmlFor="resdate">Date</label>
                     <input type="date" id="resdate" name="resdate" required></input>
                     <label htmlFor="restime">Time</label>
@@ -39,7 +38,6 @@ function ReservationForm() {
                     <input type="number" id="partysize" name="partysize" required></input>
                     <label htmlFor="table">Table</label>
                     <input type="time" id="table" name="table" required></input>
-                </section>
             </section>
 
             <input type="submit" value="Submit"></input>

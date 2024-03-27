@@ -8,6 +8,12 @@ p {
     font-size: 30px;
 }
 
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+}
+
 section {
     display: flex;
     justify-content: center;
@@ -61,3 +67,18 @@ h2 {
     color: black;
     text-align: right;
 }
+  
+label {
+    color: black;
+    vertical-align: middle;
+}
+
+input {
+    color: black;
+    background-color: white;
+}
+
+#Submit {
+    color: black;
+}
+

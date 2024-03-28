@@ -4,7 +4,7 @@ import '../App.css'
 const Header = () => {
     return (
         <header>
-            <h1>DAGZ</h1>
+            <h1 id='site-header'>DAGZ</h1>
         </header>
     );
 };

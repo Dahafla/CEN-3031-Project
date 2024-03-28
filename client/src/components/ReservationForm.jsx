@@ -4,11 +4,11 @@ import '../App.css'
 function ReservationForm() {
     return (
         <form>
-            <h1>Reserve a table</h1>
+            <h2>Reserve a table</h2>
             <hr></hr>
 
             <section>
-                <h2>Personal Information</h2>
+                <h3>Personal Information</h3>
                 <label htmlFor="fname">First name:</label>
                 <input type="text" id="fname" name="fname" required></input>
                 <label htmlFor="lname">Last name:</label>
@@ -20,7 +20,7 @@ function ReservationForm() {
             <hr></hr>
 
             <section>
-                <h2>Contact Information:</h2>
+                <h3>Contact Information:</h3>
                 <label htmlFor="phonenumber">Phone number:</label>
                 <input type="text" id="phonenumber" name="phonenumber" required></input>
             </section>
@@ -28,7 +28,7 @@ function ReservationForm() {
             <hr></hr>
 
             <section>
-                <h2>Reservation</h2>
+                <h3>Reservation</h3>
 
                     <label htmlFor="resdate">Date</label>
                     <input type="date" id="resdate" name="resdate" required></input>
@@ -39,6 +39,8 @@ function ReservationForm() {
                     <label htmlFor="table">Table</label>
                     <input type="time" id="table" name="table" required></input>
             </section>
+
+            <hr></hr>
 
             <input type="submit" value="Submit"></input>
         </form>

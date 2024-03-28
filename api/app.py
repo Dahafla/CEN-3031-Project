@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from dotenv import load_dotenv
 import os
 import pymysql
@@ -27,6 +27,27 @@ def connect_db():
 def close_connection(connection, cursor):
     cursor.close()
     connection.close()
+
+# Insert a guest reservation
+@app.post('/reserve-guest-table')
+def reserve():
+    try:
+        guest_first_name = request.form['fname']
+        guest_last_name = request.form['lname']
+        guest_dob = request.form['dob']
+        guest_phone_number = request.form['phonenumber']
+        reservation_date = request.form['resdate']
+        reservation_time = request.form['restime']
+        party_size = request.form['partysize']
+        table_number = request.form['tablenumber']
+
+        connection, cursor = connect_db()
+        cursor.execute(f"INSERT INTO guest_reservations (guest_first_name, guest_last_name, guest_dob, guest_phone_number, reservation_date, reservation_time, party_size, table_number) VALUES ('{guest_first_name}', '{guest_last_name}', '{guest_dob}', '{guest_phone_number}', '{reservation_date}', '{reservation_time}', '{party_size}', '{table_number}')")
+        connection.commit()
+        close_connection(connection, cursor)
+        return 'Table reserved!'
+    except Exception as e:
+        return str(e)
 
 if __name__ == '__main__':
     app.run(debug=True)

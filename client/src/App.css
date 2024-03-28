@@ -40,3 +40,128 @@
 .read-the-docs {
   color: #888;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 2em;
+  color: #333;
+}
+
+.description {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  background-color: white;
+}
+
+p {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 30px;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 33vh;
+  width: 100vw;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+}
+
+#fname {
+  color: black;
+  text-align: left;
+}
+
+#lname {
+  color: black;
+  text-align: right;
+}
+
+#dob {
+  color: black;
+  text-align: left;
+}
+
+#phonenumber {
+  color: black;
+  text-align: left;
+}
+
+#resdate {
+  color: black;
+  text-align: left;
+}
+
+#restime {
+  color: black;
+  text-align: right;
+}
+
+#partysize {
+  color: black;
+  text-align: left;
+}
+
+#table {
+  color: black;
+  text-align: right;
+}
+
+label {
+  color: black;
+  vertical-align: middle;
+}
+
+input {
+  color: black;
+  background-color: white;
+}
+
+#Submit {
+  color: black;
+}

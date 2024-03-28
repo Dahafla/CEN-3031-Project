@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ReservationForm.css'
+import '../App.css'
 
 function ReservationForm() {
     return (

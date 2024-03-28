@@ -22,7 +22,7 @@ function ReservationForm() {
             <section>
                 <h3>Contact Information:</h3>
                 <label htmlFor="phonenumber">Phone number:</label>
-                <input type="text" id="phonenumber" name="phonenumber" required></input>
+                <input type="tel" id="phonenumber" name="phonenumber" required></input>
             </section>
 
             <hr></hr>
@@ -37,7 +37,7 @@ function ReservationForm() {
                     <label htmlFor="partysize">Party Size</label>
                     <input type="number" id="partysize" name="partysize" required></input>
                     <label htmlFor="table">Table</label>
-                    <input type="time" id="table" name="table" required></input>
+                    <input type="number" id="table" name="table" required></input>
             </section>
 
             <hr></hr>

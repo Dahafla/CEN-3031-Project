@@ -2,15 +2,26 @@ body {
     background-color: white;
 }
 
-p {
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-size: 30px;
+p,
+h1,
+h2,
+label,
+input,
+select {
+    color: black;
 }
 
-h1 {
-    color: black;
+p,
+h1,
+h2,
+label,
+input,
+select {
     text-align: center;
+}
+
+h1,
+p {
     font-size: 30px;
 }
 
@@ -23,62 +34,27 @@ section {
     width: 100vw;
 }
 
-h2 {
-    color: black;
-    text-align: center;
+input,
+select {
+    color: rgb(0, 0, 0);
+    background-color: #e6e6e6;
+    /* This is an example, set to a dark color for contrast */
+    padding: 8px;
+    margin: 4px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-#fname {
-    color: black;
-    text-align: left;
+input[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-#lname {
-    color: black;
-    text-align: right;
+input[type="submit"]:hover {
+    background-color: #02458e;
 }
-
-#dob {
-    color: black;
-    text-align: left;
-}
-
-#phonenumber {
-    color: black;
-    text-align: left;
-}
-
-#resdate {
-    color: black;
-    text-align: left;
-}
-
-#restime {
-    color: black;
-    text-align: right;
-}
-
-#partysize {
-    color: black;
-    text-align: left;
-}
-
-#table {
-    color: black;
-    text-align: right;
-}
-  
-label {
-    color: black;
-    vertical-align: middle;
-}
-
-input {
-    color: black;
-    background-color: white;
-}
-
-#Submit {
-    color: black;
-}
-

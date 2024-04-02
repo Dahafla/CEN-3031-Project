@@ -38,3 +38,20 @@
 .button:hover {
     background-color: #0056b3;
 }
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 400px;
+}
+
+.button-guest {
+    background-color: #be2d2d;
+}
+
+.button-guest:hover {
+    background-color: #882121;
+    /* A darker shade for hover state */
+}

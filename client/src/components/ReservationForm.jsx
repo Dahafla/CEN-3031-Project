@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import '../App.css'
+import './ReservationForm.css'
 
 function ReservationForm() {
     return (
         <form>
-            <h2>Reserve a table</h2>
+            <h1>Reserve a table</h1>
             <hr></hr>
 
             <section>
-                <h3>Personal Information</h3>
+                <h2>Personal Information</h2>
                 <label htmlFor="fname">First name:</label>
                 <input type="text" id="fname" name="fname" required></input>
                 <label htmlFor="lname">Last name:</label>
@@ -20,15 +20,15 @@ function ReservationForm() {
             <hr></hr>
 
             <section>
-                <h3>Contact Information:</h3>
+                <h2>Contact Information:</h2>
                 <label htmlFor="phonenumber">Phone number:</label>
-                <input type="tel" id="phonenumber" name="phonenumber" required></input>
+                <input type="text" id="phonenumber" name="phonenumber" required></input>
             </section>
 
             <hr></hr>
 
             <section>
-                <h3>Reservation</h3>
+                <h2>Reservation</h2>
 
                     <label htmlFor="resdate">Date</label>
                     <input type="date" id="resdate" name="resdate" required></input>
@@ -37,10 +37,8 @@ function ReservationForm() {
                     <label htmlFor="partysize">Party Size</label>
                     <input type="number" id="partysize" name="partysize" required></input>
                     <label htmlFor="table">Table</label>
-                    <input type="number" id="table" name="table" required></input>
+                    <input type="time" id="table" name="table" required></input>
             </section>
-
-            <hr></hr>
 
             <input type="submit" value="Submit"></input>
         </form>

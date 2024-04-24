@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS upcoming_reservations(
     customer_id INT UNSIGNED ZEROFILL,
     applied_perk INT UNSIGNED ZEROFILL,
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
-    FOREIGN KEY (table_number) REFERENCES availability(table_number),
+    FOREIGN KEY (table_number) REFERENCES tables(table_number),
     FOREIGN KEY (applied_perk) REFERENCES perks(perk_id)
 );

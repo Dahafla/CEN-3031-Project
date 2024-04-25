@@ -52,6 +52,7 @@ function GuestReservationForm() {
                 throw new Error('Network response was not ok');
             }
             console.log('Reservation successful');
+            window.location.reload();
         })
         .catch(error => {
             console.error('There was a problem with your reservation:', error);
@@ -60,8 +61,8 @@ function GuestReservationForm() {
 
     return (
         <>
-        <h2>Make a reservation </h2>
-        <hr></hr>
+        <h1>Make a reservation </h1>
+
         <form onSubmit={handleSubmit}>
             <hr></hr>
 

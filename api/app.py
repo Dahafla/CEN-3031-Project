@@ -80,25 +80,86 @@ def reserve_guest():
     except Exception as e:
         print(e)
         return str(e)
-    
 
-# # Insert a customer reservation
-# @app.post('/reserve-customer-table')
-# def reserve_customer():
-#     try:
-#         customer_id = request.form['customerid']
-#         reservation_date = request.form['resdate']
-#         reservation_time = request.form['restime']
-#         party_size = request.form['partysize']
-        # table_number = request.form['tablenumber']
+# Insert a customer reservation
+@app.post('/reserve-customer-table')
+def reserve_customer():
+    try:
+        customer_first_name = request.form['fname']
+        customer_last_name = request.form['lname']
+        customer_id = request.form['custid']
+        customer_phone_number = request.form['phonenumber']
+        reservation_date = request.form['resdate']
+        reservation_time = request.form['restime']
+        party_size = request.form['partysize']
 
-#         connection, cursor = connect_db()
-#         cursor.execute(f"INSERT INTO customer_reservations (customer_id, reservation_date, reservation_time, party_size, table_number) VALUES ('{customer_id}', '{reservation_date}', '{reservation_time}', '{party_size}', '{table_number}')")
-#         connection.commit()
-#         close_connection(connection, cursor)
-#         return 'Table reserved!'
-#     except Exception as e:
-#         return str(e)
+        # Select the smallest table that can accommodate the party
+        connection, cursor = connect_db()
+        cursor.execute(f"SELECT table_number FROM tables WHERE table_size >= {party_size} ORDER BY table_size ASC")
+        for table_number in cursor.fetchall():
+            cursor.execute(f"SELECT * FROM availability WHERE table_number = {table_number[0]} AND date = '{reservation_date}' AND time = '{reservation_time}'")
+            availability = cursor.fetchone()
+            if availability is not None:
+                break
+        table_number = availability[0]
+        # table_number = cursor.fetchone()[0]
+
+        cursor.execute(f"INSERT INTO upcoming_reservations (first_name, last_name, phone_number, date, time, party_size, table_number, customer_id) VALUES ('{customer_first_name}', '{customer_last_name}', '{customer_phone_number}', '{reservation_date}', '{reservation_time}', {party_size}, {table_number}, {customer_id})")
+        cursor.execute(f"DELETE FROM availability WHERE table_number = {table_number} AND date = '{reservation_date}' AND time = '{reservation_time}'")
+        connection.commit()
+        close_connection(connection, cursor)
+        return 'Table reserved!'
+    except Exception as e:
+        print(e)
+        return str(e)
+
+# Check for a customer account
+@app.get('/customer-login')
+def check_customer_account():
+    try:
+        phone_number = request.args.get('phone')
+        print(phone_number)
+        connection, cursor = connect_db()
+        cursor.execute(f"SELECT * FROM customers WHERE phone_number = '{phone_number}'")
+        customer = cursor.fetchone()
+        close_connection(connection, cursor)
+        if customer is not None:
+            return {
+                'customer_id': customer[0],
+                'first_name': customer[1],
+                'last_name': customer[2],
+                'phone_number': customer[3]
+            }
+        else:
+            return {
+                'phone_number': phone_number
+            }
+    except Exception as e:
+        print(e)
+        return str(e)
+
+# Create a customer account
+@app.post('/create-customer-account')
+def create_customer_account():
+    try:
+        first_name = request.form['fname']
+        last_name = request.form['lname']
+        phone_number = request.form['phonenumber']
+        connection, cursor = connect_db()
+        cursor.execute(f"INSERT INTO customers (first_name, last_name, phone_number) VALUES ('{first_name}', '{last_name}', '{phone_number}')")
+        cursor.execute(f"SELECT customer_id FROM customers WHERE phone_number = '{phone_number}'")
+        customer_id = cursor.fetchone()[0]
+        cursor.execute(f"UPDATE upcoming_reservations SET customer_id = {customer_id} WHERE phone_number = '{phone_number}'")
+        connection.commit()
+        close_connection(connection, cursor)
+        return {
+                'customer_id': customer_id,
+                'first_name': first_name,
+                'last_name': last_name,
+                'phone_number': phone_number
+            }
+    except Exception as e:
+        return str(e)
 
 # Check availbility for tables with X seats
 @app.get('/check-availability')
